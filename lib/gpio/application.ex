@@ -7,8 +7,7 @@ defmodule Gpio.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Gpio.Worker.start_link(arg)
-      # {Gpio.Worker, arg}
+			TempMon.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
