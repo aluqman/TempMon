@@ -1,0 +1,11 @@
+defmodule TempMon.Repo.Migrations.Readings do
+  use Ecto.Migration
+
+  def change do
+		create table(:readings, primary_key: false) do
+			add :temperature, :float
+			add :humidity, :float
+			timestamps()
+		end
+  end
+end
