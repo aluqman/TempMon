@@ -7,4 +7,6 @@ config :gpio, TempMon.Repo,
   hostname: "localhost"
 
 config :gpio,
-  ecto_repos: [TempMon.Repo]
+  ecto_repos: [TempMon.Repo],
+  sensor: :dht11,
+  pin: 4

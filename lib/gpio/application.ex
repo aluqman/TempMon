@@ -6,8 +6,14 @@ defmodule Gpio.Application do
   use Application
 
   def start(_type, _args) do
+		sensor_args = [
+			pin: Application.get_env(:gpio, :pin),
+			sensor: Application.get_env(:gpio, :sensor)
+		]
+
     children = [
-			TempMon.Repo
+      TempMon.Repo,
+			{TempMon.Poll, sensor_args}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
