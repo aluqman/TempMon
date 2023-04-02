@@ -16,7 +16,6 @@ Future additions (in order of priority):
 - A local Elixir installation
 - Some sensor to be read from. I'm using a Raspberry Pi to do readings.
 - PostgreSQL with the TimescaleDB extension.
-- 
 
 ## Configuration
 
@@ -31,10 +30,10 @@ and configure that like so:
 
 ```elixir
 config :gpio,
-	ecto_repos: [TempMon.Repo],
-	sensor: <insert sensor here>
-	pin: <insert pin number here>
-	sensor_lib: <insert library here>
+  ecto_repos: [TempMon.Repo],
+  sensor: <insert sensor here>
+  pin: <insert pin number here>
+  sensor_lib: <insert library here>
 ```
 
 
