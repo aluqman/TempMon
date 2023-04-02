@@ -31,9 +31,9 @@ and configure that like so:
 ```elixir
 config :gpio,
   ecto_repos: [TempMon.Repo],
-  sensor: <insert sensor here>
-  pin: <insert pin number here>
-  sensor_lib: <insert library here>
+  sensor: # insert sensor here,
+  pin:  # insert pin number here,
+  sensor_lib: # insert library here
 ```
 
 
