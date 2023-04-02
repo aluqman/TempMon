@@ -39,10 +39,10 @@ defmodule TempMon.Reading do
     Logger.error("Sensor responded with error code #{error_code}.")
 
     # Retry failed readings.
-		Sensor.read(
-			state[:pin],
-			state[:sensor]
-		)
-		|> process(state)
+    Sensor.read(
+      state[:pin],
+      state[:sensor]
+    )
+    |> process(state)
   end
 end
