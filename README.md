@@ -11,6 +11,26 @@ Future additions (in order of priority):
 - Add Grafana dashboards to visualize the data coming in.
 - Add some way of notifying myself if something goes wrong (i.e. temperature goes above X)
 
+## Configuration
+
+Config options are available under `config/config.exs`. 
+
+A sensor and given GPIO data pin can be configured on a per-application basis there.
+The database configuration is also present there. This project assumes that there is a local instance of PostgreSQL
+running, with TimescaleDB installed. The migrations automagically create a database with the extension.
+
+## Initialization
+
+Configure the application as you want, and then do the ol' Ecto goodness:
+
+```shell
+mix ecto.create
+mix ecto.migrate
+```
+
+From there, you can run the app using `mix run --no-halt`. You can also run the app interactively
+in `iex` using `iex -S mix` but, why would you?
+
 ## Installation
 
 no <3
