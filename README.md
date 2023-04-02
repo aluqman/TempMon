@@ -36,7 +36,6 @@ config :gpio,
   sensor_lib: # insert library here
 ```
 
-
 ## Initialization
 
 Configure the application as you want, and then do the ol' Ecto goodness:
