@@ -5,7 +5,7 @@ defmodule TempMon.Reading do
   """
 
   use Ecto.Schema
-	require Logger
+  require Logger
 
   @primary_key false
 
@@ -21,20 +21,20 @@ defmodule TempMon.Reading do
     |> Ecto.Changeset.validate_required([:temperature, :humidity])
   end
 
-	@doc """
-	Responsible for processing a reading from a sensor, and inserting
-	properly formatted data in to the database.
-	"""
-	@spec process({:ok, map()} | {:error, integer()}) :: any()
-	def process({:ok, reading}) do
-		Logger.info("Analyzing reading.")
+  @doc """
+  Responsible for processing a reading from a sensor, and inserting
+  properly formatted data in to the database.
+  """
+  @spec process({:ok, map()} | {:error, integer()}) :: any()
+  def process({:ok, reading}) do
+    Logger.info("Analyzing reading.")
 
-		%TempMon.Reading{}
-		|> changeset(reading)
-		|> TempMon.Repo.insert()
-	end
+    %TempMon.Reading{}
+    |> changeset(reading)
+    |> TempMon.Repo.insert()
+  end
 
-	def process({:error, error_code}) do
-		Logger.error("Sensor responded with error code #{error_code}.")
-	end
+  def process({:error, error_code}) do
+    Logger.error("Sensor responded with error code #{error_code}.")
+  end
 end

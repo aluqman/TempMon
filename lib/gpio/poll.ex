@@ -11,7 +11,7 @@ defmodule TempMon.Poll do
 
   use GenServer
   alias TempMon.Sensor
-	alias TempMon.Reading
+  alias TempMon.Reading
 
   @spec start_link(list()) :: {:ok, pid()}
   @doc """
@@ -39,9 +39,9 @@ defmodule TempMon.Poll do
       )
 
     # send result to partner thread
-		Task.start(fn -> 
-			Reading.process(reading)
-		end)
+    Task.start(fn ->
+      Reading.process(reading)
+    end)
 
     Process.send_after(
       self(),
@@ -49,6 +49,6 @@ defmodule TempMon.Poll do
       Keyword.get(state, :interval_millis, @default_interval_millis)
     )
 
-		{:noreply, state}
+    {:noreply, state}
   end
 end
