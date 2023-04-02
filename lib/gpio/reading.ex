@@ -6,6 +6,7 @@ defmodule TempMon.Reading do
 
   use Ecto.Schema
   require Logger
+  alias TempMon.Sensor
 
   @primary_key false
 
@@ -25,8 +26,8 @@ defmodule TempMon.Reading do
   Responsible for processing a reading from a sensor, and inserting
   properly formatted data in to the database.
   """
-  @spec process({:ok, map()} | {:error, integer()}) :: any()
-  def process({:ok, reading}) do
+  @spec process({:ok, map()} | {:error, integer()}, list()) :: any()
+  def process({:ok, reading}, _state) do
     Logger.info("Analyzing reading.")
 
     %TempMon.Reading{}
@@ -34,7 +35,14 @@ defmodule TempMon.Reading do
     |> TempMon.Repo.insert()
   end
 
-  def process({:error, error_code}) do
+  def process({:error, error_code}, state) do
     Logger.error("Sensor responded with error code #{error_code}.")
+
+    # Retry failed readings.
+		Sensor.read(
+			state[:pin],
+			state[:sensor]
+		)
+		|> process(state)
   end
 end

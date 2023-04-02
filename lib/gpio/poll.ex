@@ -39,8 +39,10 @@ defmodule TempMon.Poll do
       )
 
     # send result to partner thread
+    # We pass along the state such that the processing thread can request
+		# a new reading in case of failures.
     Task.start(fn ->
-      Reading.process(reading)
+      Reading.process(reading, state)
     end)
 
     Process.send_after(
