@@ -1,21 +1,16 @@
-# Gpio
+# TempMon
 
-**TODO: Add description**
+A simple Elixir program to poll a temperature sensor in my room
+to tell me how shit the air quality is.
+
+Leverages Ecto + TimescaleDB to create readings on a fixed interval.
+
+Future additions (in order of priority): 
+
+- Add tests, linting, etc. and clean the code up a bit
+- Add Grafana dashboards to visualize the data coming in.
+- Add some way of notifying myself if something goes wrong (i.e. temperature goes above X)
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `gpio` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:gpio, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/gpio](https://hexdocs.pm/gpio).
-
+no <3
