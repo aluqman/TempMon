@@ -14,5 +14,5 @@ defmodule TempMon.Sensor do
   """
   def read(pin, sensor), do: impl().read(pin, sensor)
 
-  defp impl, do: Application.get_env(:tempmon, :sensor_lib, DHT)
+  defp impl, do: Application.get_env(:gpio, :sensor_lib, DHT)
 end

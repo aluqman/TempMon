@@ -11,13 +11,32 @@ Future additions (in order of priority):
 - Add Grafana dashboards to visualize the data coming in.
 - Add some way of notifying myself if something goes wrong (i.e. temperature goes above X)
 
+## Requirements
+
+- A local Elixir installation
+- Some sensor to be read from. I'm using a Raspberry Pi to do readings.
+- PostgreSQL with the TimescaleDB extension.
+- 
+
 ## Configuration
 
 Config options are available under `config/config.exs`. 
 
 A sensor and given GPIO data pin can be configured on a per-application basis there.
 The database configuration is also present there. This project assumes that there is a local instance of PostgreSQL
-running, with TimescaleDB installed. The migrations automagically create a database with the extension.
+running, with TimescaleDB installed. The migrations automagically create a database with the extension enabled.
+
+In the event that you're not using the same sensor as I am, you can also add a different library to `mix.exs`
+and configure that like so:
+
+```elixir
+config :gpio,
+	ecto_repos: [TempMon.Repo],
+	sensor: <insert sensor here>
+	pin: <insert pin number here>
+	sensor_lib: <insert library here>
+```
+
 
 ## Initialization
 
