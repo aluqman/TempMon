@@ -9,8 +9,8 @@ defmodule Gpio.Application do
 
   def start(_type, _args) do
     sensor_args = [
-      pin: Application.get_env(:gpio, :pin),
-      sensor: Application.get_env(:gpio, :sensor),
+      pin: Application.fetch_env!(:gpio, :pin),
+      sensor: Application.fetch_env!(:gpio, :sensor),
       interval_millis:
         Application.get_env(
           :gpio,
