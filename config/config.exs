@@ -9,4 +9,5 @@ config :gpio, TempMon.Repo,
 config :gpio,
   ecto_repos: [TempMon.Repo],
   sensor: :dht11,
-  pin: 4
+  pin: 4,
+	interval_millis: 2_000

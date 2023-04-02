@@ -7,7 +7,6 @@ defmodule TempMon.Poll do
   In the interest of accuracy for the polling interval, processing of results 
   is handled by a separate process. 
   """
-  @default_interval_millis 60_000
 
   use GenServer
   alias TempMon.Sensor
@@ -48,7 +47,7 @@ defmodule TempMon.Poll do
     Process.send_after(
       self(),
       :poll,
-      Keyword.get(state, :interval_millis, @default_interval_millis)
+      state[:interval_millis]
     )
 
     {:noreply, state}

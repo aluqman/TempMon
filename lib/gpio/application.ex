@@ -3,12 +3,20 @@ defmodule Gpio.Application do
   # for more information on OTP Applications
   @moduledoc false
 
+  @default_interval_millis 60_000
+
   use Application
 
   def start(_type, _args) do
     sensor_args = [
       pin: Application.get_env(:gpio, :pin),
-      sensor: Application.get_env(:gpio, :sensor)
+      sensor: Application.get_env(:gpio, :sensor),
+      interval_millis:
+        Application.get_env(
+          :gpio,
+          :interval_millis,
+          @default_interval_millis
+        )
     ]
 
     children = [
