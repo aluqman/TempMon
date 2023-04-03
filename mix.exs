@@ -24,7 +24,8 @@ defmodule Gpio.MixProject do
     [
       {:ecto_sql, "~> 3.0"},
       {:postgrex, "<= 0.15.11"},
-      {:dht, "~> 0.1"}
+      {:dht, "~> 0.1"},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 end
