@@ -3,13 +3,22 @@
 A simple Elixir program to poll a temperature sensor in my room
 to tell me how shit the air quality is.
 
-Leverages Ecto + TimescaleDB to create readings on a fixed interval.
+Leverages Ecto + TimescaleDB to create readings on a fixed interval (aka timeseries data).
 
 Future additions (in order of priority): 
 
 - Add tests, linting, etc. and clean the code up a bit (including CI pipelines for all of the above)
 - Add Grafana dashboards to visualize the data coming in.
-- Add some way of notifying myself if something goes wrong (i.e. temperature goes above X)
+- Add some way of alerting myself if something goes wrong (i.e. temperature goes above X)
+
+## Isn't this super over-engineered?
+
+Yes. Definitely. You could do the exact same thing with a cron job and a single-file Python script. Consider,
+however, that this is *fun*. This is a little bit of an exercise in software architecture -
+designing something this small and simple is hard to mess up, but gives a lot of room for experimentation.
+Over-engineering this simply gives me the confidence to regular-engineer more intense projects.
+
+Also, it makes me feel good about myself, and is fun to do. Sometimes that's the only reason you need.
 
 ## Requirements
 
