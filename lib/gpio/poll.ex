@@ -9,8 +9,8 @@ defmodule TempMon.Poll do
   """
 
   use GenServer
-  alias TempMon.Sensor
   alias TempMon.Reading
+  alias TempMon.Sensor
 
   @spec start_link(list()) :: {:ok, pid()}
   @doc """
