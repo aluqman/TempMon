@@ -12,4 +12,4 @@ config :gpio,
   pin: 4,
   interval_millis: 60_000
 
-if File.exists?("config/#{Mix.env()}.exs"), do: import_config "#{Mix.env()}.exs"
+if File.exists?("config/#{Mix.env()}.exs"), do: import_config("#{Mix.env()}.exs")

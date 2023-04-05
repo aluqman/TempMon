@@ -8,8 +8,8 @@ defmodule Gpio.MixProject do
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-			elixirc_paths: elixirc_paths(Mix.env()),
-			aliases: aliases()
+      elixirc_paths: elixirc_paths(Mix.env()),
+      aliases: aliases()
     ]
   end
 
@@ -31,12 +31,12 @@ defmodule Gpio.MixProject do
     ]
   end
 
-	defp elixirc_paths(:test), do: ["lib", "test/support"]
-	defp elixirc_paths(_), do: ["lib"]
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
 
-	defp aliases do
-		[
-			test: ["ecto.create --quiet", "ecto.migrate", "test"]
-		]
-	end
+  defp aliases do
+    [
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+    ]
+  end
 end

@@ -1,6 +1,6 @@
 defmodule TempMon.PollTest do
   use ExUnit.Case, async: true
-	use TempMon.RepoCase
+  use TempMon.RepoCase
 
   alias TempMon.Poll
 

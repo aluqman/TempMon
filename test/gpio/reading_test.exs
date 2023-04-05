@@ -1,6 +1,6 @@
 defmodule TempMonTest.Reading do
   use ExUnit.Case, async: true
-	use TempMon.RepoCase
+  use TempMon.RepoCase
 
   alias TempMon.Reading
   import ExUnit.CaptureLog
