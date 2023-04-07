@@ -7,9 +7,10 @@ Leverages Ecto + TimescaleDB to create readings on a fixed interval (aka timeser
 
 Future additions (in order of priority): 
 
-- Add tests, linting, etc. and clean the code up a bit (including CI pipelines for all of the above)
-- Add Grafana dashboards to visualize the data coming in.
-- Add some way of alerting myself if something goes wrong (i.e. temperature goes above X)
+- [x] Add tests, linting, etc. and clean the code up a bit (including CI pipelines for all of the above)
+  - [ ] Auto-deploy updates to the Pi when CI succeeds 
+- [ ] Add Grafana dashboards to visualize the data coming in.
+- [ ] Add some way of alerting myself if something goes wrong (i.e. temperature goes above X)
 
 ## Isn't this super over-engineered?
 
