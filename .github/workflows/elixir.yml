@@ -17,7 +17,7 @@ permissions:
 jobs:
   lint:
     name: Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     continue-on-error: true
     
     steps:
@@ -47,11 +47,11 @@ jobs:
 
   test:
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     
     services:
       timescaledb:
-        image: timescaledb
+        image: timescaledb:latest-pg13
         env:
           POSTGRES_PASSWORD: postgres
         options: >-
