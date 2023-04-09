@@ -1,7 +1,7 @@
 # TempMon
 
 A simple Elixir program to poll a temperature sensor in my room
-to tell me how badthe air quality is.
+to tell me how bad the air quality is.
 
 Leverages Ecto + TimescaleDB to create readings on a fixed interval (aka timeseries data).
 
