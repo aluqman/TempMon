@@ -1,7 +1,7 @@
 # TempMon
 
 A simple Elixir program to poll a temperature sensor in my room
-to tell me how shit the air quality is.
+to tell me how badthe air quality is.
 
 Leverages Ecto + TimescaleDB to create readings on a fixed interval (aka timeseries data).
 
@@ -10,7 +10,7 @@ Future additions (in order of priority):
 - [x] Add tests, linting, etc. and clean the code up a bit (including CI pipelines for all of the above)
   - [ ] (Maybe) auto-deploy updates to the Pi when CI succeeds 
 - [x] Add Grafana dashboards to visualize the data coming in.
-- [ ] Validate readings so that goofy shit doesn't show up (eg. 120% humidity)
+- [ ] Validate readings so that goofy readings don't show up (eg. 120% humidity)
 - [ ] Add some way of alerting myself if something goes wrong (i.e. temperature goes above X)
 
 ![image](https://user-images.githubusercontent.com/73316809/230794040-8c725e3a-1720-4a32-b08c-08e7fe8b20b7.png)
