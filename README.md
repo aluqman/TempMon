@@ -9,8 +9,11 @@ Future additions (in order of priority):
 
 - [x] Add tests, linting, etc. and clean the code up a bit (including CI pipelines for all of the above)
   - [ ] (Maybe) auto-deploy updates to the Pi when CI succeeds 
-- [ ] Add Grafana dashboards to visualize the data coming in.
+- [x] Add Grafana dashboards to visualize the data coming in.
+- [ ] Validate readings so that goofy shit doesn't show up (eg. 120% humidity)
 - [ ] Add some way of alerting myself if something goes wrong (i.e. temperature goes above X)
+
+![image](https://user-images.githubusercontent.com/73316809/230794040-8c725e3a-1720-4a32-b08c-08e7fe8b20b7.png)
 
 ## Isn't this super over-engineered?
 
