@@ -13,7 +13,7 @@ Future additions (in order of priority):
 - [ ] Validate readings so that goofy shit doesn't show up (eg. 120% humidity)
 - [ ] Add some way of alerting myself if something goes wrong (i.e. temperature goes above X)
 
-![image](https://user-images.githubusercontent.com/73316809/230794040-8c725e3a-1720-4a32-b08c-08e7fe8b20b7.png
+![image](https://user-images.githubusercontent.com/73316809/230794040-8c725e3a-1720-4a32-b08c-08e7fe8b20b7.png)
 
 *(I haven't exposed the Pi to the internet so you'll just have to trust that this dashboard is up and running)*
 
