@@ -1,11 +1,12 @@
 defmodule TempMon.Reading do
   @moduledoc """
-  Schema and changeset for the reading of data from a sensor. 
+  Schema and changeset for the reading of data from a sensor.
   Contains information relating solely to temperature and humidity.
   """
 
   use Ecto.Schema
   require Logger
+  alias Ecto.Changeset
   alias TempMon.Sensor
 
   @primary_key false
@@ -18,8 +19,10 @@ defmodule TempMon.Reading do
 
   def changeset(reading, params \\ %{}) do
     reading
-    |> Ecto.Changeset.cast(params, [:temperature, :humidity])
-    |> Ecto.Changeset.validate_required([:temperature, :humidity])
+    |> Changeset.cast(params, [:temperature, :humidity])
+    |> Changeset.validate_required([:temperature, :humidity])
+    |> Changeset.validate_number(:temperature, less_than: 100)
+    |> Changeset.validate_number(:humidity, less_than: 100)
   end
 
   @doc """
